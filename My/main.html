@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* 모든 태그의 기본 margin, padding 초기화 */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /*모든 div에 테두리를 설정한 후 작업, 작업이 끝나면 제거  */
+        /* div { 
+            border: 1px solid black;
+        }*/
+
+        .menu-a {
+            text-decoration: none;
+            color: white;
+            padding: 15px;
+            padding-right: 80px;
+            padding-left: 80px;
+        }
+
+        .menu {
+            /* 내부요소 중앙정렬 */
+            display: flex;
+            /*수평방향 정렬*/
+            justify-content: center;
+            /*수직방향 정렬*/
+            align-items: center;
+        }
+
+        .search {
+            /* 내부요소 중앙정렬 */
+            display: flex;
+            /*수평방향 정렬*/
+            justify-content: center;
+            /*수직방향 정렬*/
+            align-items: center;
+            padding-top: 300px;
+        }
+
+        .search-input {
+            width: 300px;
+            height: 30px;
+            border-radius: 15px;
+            font-size: 15px;
+            margin-right: 10px;
+            padding-left: 10px;
+            border-color: skyblue;
+        }
+
+        .search-button {
+            font-size: 18px;
+            border: none;
+            background-color: skyblue;
+            width: 32px;
+            height: 30px;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+
+        .nav-alphabet {
+            background-color: rgb(5, 197, 255);
+            position: fixed;
+            left: 1%;
+            top: 50%;
+            transform: translate(0, -50%);
+            flex-direction: column;
+        }
+
+        .alphabet-menu {
+            text-decoration: none;
+            color: white;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 모든 영역을 감싸는 하나의 div를 선언 후 시작 -->
+    <div class="container">
+        <!-- 네비게이션에 대한 div는 nav태그 사용-->
+        <nav class="navigation" style="background-color: rgb(13, 110, 253);">
+            <div class="menu">
+                <div><a class="menu-a" href="">소개</a></div>
+                <div><a class="menu-a" href="">사용법</a></div>
+                <div><a class="menu-a" href="">공지</a></div>
+                <div><a class="menu-a" href="">Q&A</a></div>
+            </div>
+        </nav>
+        <section>
+            <form action="">
+                <div class="search">
+                    <input class="search-input" type="text" placeholder="영단어 검색" size="50">
+                    <button class="search-button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=""
+                            class="bi bi-search" viewBox="0 0 16 16">
+                            <path
+                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                        </svg>
+                    </button>
+                </div>
+            </form>
+        </section>
+        <nav class="nav-alphabet">
+            <div><a class="alphabet-menu" href="">A</a></div>
+            <div><a class="alphabet-menu" href="">B</a></div>
+            <div><a class="alphabet-menu" href="">C</a></div>
+            <div><a class="alphabet-menu" href="">D</a></div>
+            <div><a class="alphabet-menu" href="">E</a></div>
+            <div><a class="alphabet-menu" href="">F</a></div>
+            <div><a class="alphabet-menu" href="">G</a></div>
+            <div><a class="alphabet-menu" href="">H</a></div>
+            <div><a class="alphabet-menu" href="">I</a></div>
+            <div><a class="alphabet-menu" href="">J</a></div>
+            <div><a class="alphabet-menu" href="">K</a></div>
+            <div><a class="alphabet-menu" href="">L</a></div>
+            <div><a class="alphabet-menu" href="">M</a></div>
+            <div><a class="alphabet-menu" href="">N</a></div>
+            <div><a class="alphabet-menu" href="">O</a></div>
+            <div><a class="alphabet-menu" href="">P</a></div>
+            <div><a class="alphabet-menu" href="">Q</a></div>
+            <div><a class="alphabet-menu" href="">R</a></div>
+            <div><a class="alphabet-menu" href="">S</a></div>
+            <div><a class="alphabet-menu" href="">T</a></div>
+            <div><a class="alphabet-menu" href="">U</a></div>
+            <div><a class="alphabet-menu" href="">V</a></div>
+            <div><a class="alphabet-menu" href="">W</a></div>
+            <div><a class="alphabet-menu" href="">X</a></div>
+            <div><a class="alphabet-menu" href="">Y</a></div>
+            <div><a class="alphabet-menu" href="">Z</a></div>
+        </nav>
+    </div>
+
+</body>
+
+</html>
