@@ -13,58 +13,94 @@
             padding: 0;
         }
 
-        /*모든 div에 테두리를 설정한 후 작업, 작업이 끝나면 제거  */
-        /* div { 
-            border: 1px solid black;
-        }*/
+        .container {
+            /* background-color: wheat; */
+        }
 
-        .menu-a {
+        /*모든 div에 테두리를 설정한 후 작업, 작업이 끝나면 제거  */
+        div {
+            /* border: 1px solid black; */
+        }
+
+        /* 상단 내비 */
+        .nav-top {
+            /* flex-container 적용: flex-container 안에 내용물(flex-item)을 가로방향 배치 (width-내용물, height-컨테이너만큼 알아서 차지) */
+            display: flex;
+            /* main-axis 메인축(오뎅꼬치) 방향 정렬 */
+            justify-content: center;
+            /* cross-axis 교차축 방향 정렬 */
+            /* align-items: center; */
+            background-color: rgb(13, 109, 253);
+            /* padding-bottom: 15px; */
+        }
+
+        /* 상단 내비 메뉴 */
+        .menu-top {
             text-decoration: none;
             color: white;
-            padding: 15px;
             padding-right: 80px;
             padding-left: 80px;
+            line-height: 40px;
         }
 
-        .menu {
-            /* 내부요소 중앙정렬 */
-            display: flex;
-            /*수평방향 정렬*/
-            justify-content: center;
-            /*수직방향 정렬*/
-            align-items: center;
-        }
-
-        .search {
-            /* 내부요소 중앙정렬 */
-            display: flex;
-            /*수평방향 정렬*/
-            justify-content: center;
-            /*수직방향 정렬*/
-            align-items: center;
-            padding-top: 300px;
-        }
-
-        .search-input {
+        /* 검색 전체 박스 */
+        .search-box {
+            height: 30px;
             width: 300px;
-            height: 30px;
-            border-radius: 15px;
-            font-size: 15px;
-            margin-right: 10px;
-            padding-left: 10px;
-            border-color: skyblue;
+            background: white;
+            border-radius: 40px;
+            padding: 10px;
+            /* border: 1px solid #797979; */
+            border: 1px solid white;
+            /* 테두리에 그림자 효과 주기 */
+            /* 첫번째 px은 그림자의 x축 방향 위치 */
+            /* 두번째 px은 그림자의 y축 방향 위치 */
+            /* 세번째 px은 그림자의 옅은 (퍼트림)정도 */
+            /* 네번째 px은 그림자의 크기 */
+            box-shadow: 0px 0px 3px 1px #c2c2c2;
         }
 
-        .search-button {
-            font-size: 18px;
+        /* 검색 입력 창 */
+        .search-txt {
             border: none;
-            background-color: skyblue;
-            width: 32px;
-            height: 30px;
-            border-radius: 15px;
-            cursor: pointer;
+            background: none;
+            outline: none;
+            float: left;
+            padding-left: 10px;
+            color: #797979;
+            font-size: 16px;
+            line-height: 30px;
+            width: 240px;
         }
 
+        /* 검색 돋보기 버튼 */
+        .search-btn {
+            float: right;
+            width: 40px;
+            height: 100%;
+            /*border-radius: 50%;*/
+            background: white;
+            border: none;
+            font-size: 16px;
+            /* flex-container 적용: flex-container 안에 내용물(flex-item)을 가로방향 배치 (width-내용물, height-컨테이너만큼 알아서 차지) */
+            display: flex;
+            /* main-axis 메인축(오뎅꼬치) 방향 정렬 */
+            justify-content: center;
+            /* cross-axis 교차축 방향 정렬 */
+            align-items: center;
+            cursor: pointer;
+            fill: rgb(5, 197, 255);
+        }
+
+        /* 화면 구역 - 검색 */
+        .search-section {
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 알파벳 내비 */
         .nav-alphabet {
             background-color: rgb(5, 197, 255);
             position: fixed;
@@ -74,7 +110,8 @@
             flex-direction: column;
         }
 
-        .alphabet-menu {
+        /* 알파벳 내비 메뉴 - 알파벳들 */
+        .menu-alphabet {
             text-decoration: none;
             color: white;
             padding: 10px;
@@ -86,54 +123,56 @@
     <!-- 모든 영역을 감싸는 하나의 div를 선언 후 시작 -->
     <div class="container">
         <!-- 네비게이션에 대한 div는 nav태그 사용-->
-        <nav class="navigation" style="background-color: rgb(13, 110, 253);">
-            <div class="menu">
-                <div><a class="menu-a" href="">소개</a></div>
-                <div><a class="menu-a" href="">사용법</a></div>
-                <div><a class="menu-a" href="">공지</a></div>
-                <div><a class="menu-a" href="">Q&A</a></div>
-            </div>
+        <!-- 상단 네비 -->
+        <nav class="nav-top">
+            <div><a class="menu-top" href="">소개</a></div>
+            <div><a class="menu-top" href="">사용법</a></div>
+            <div><a class="menu-top" href="">공지</a></div>
+            <div><a class="menu-top" href="">Q&A</a></div>
         </nav>
-        <section>
-            <form action="">
-                <div class="search">
-                    <input class="search-input" type="text" placeholder="영단어 검색" size="50">
-                    <button class="search-button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=""
-                            class="bi bi-search" viewBox="0 0 16 16">
-                            <path
-                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
-                        </svg>
-                    </button>
-                </div>
+        <section class="search-section">
+            <!-- 검색창 -->
+            <!-- form: 폼에서 받아온 내용을 action 속성에 적힌 서버의 주소에 전달해주는 기능을 함
+                출처: https://jyitstory.tistory.com/142 [JY Tech Blog:티스토리] -->
+            <form class="search-box" action="" method="get">
+                <input class="search-txt" type="text" placeholder="검색어를 입력하세요." size="50">
+                <!-- 클릭 시에 입력된 내용이 제출되어야 하므로 type은 submit으로 함 -->
+                <button class="search-btn" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        fill="" class="bi bi-search" viewBox="0 0 16 16">
+                        <path
+                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                    </svg>
+                </button>
             </form>
         </section>
+        <!-- 좌측 알파벳 네비 -->
         <nav class="nav-alphabet">
-            <div><a class="alphabet-menu" href="">A</a></div>
-            <div><a class="alphabet-menu" href="">B</a></div>
-            <div><a class="alphabet-menu" href="">C</a></div>
-            <div><a class="alphabet-menu" href="">D</a></div>
-            <div><a class="alphabet-menu" href="">E</a></div>
-            <div><a class="alphabet-menu" href="">F</a></div>
-            <div><a class="alphabet-menu" href="">G</a></div>
-            <div><a class="alphabet-menu" href="">H</a></div>
-            <div><a class="alphabet-menu" href="">I</a></div>
-            <div><a class="alphabet-menu" href="">J</a></div>
-            <div><a class="alphabet-menu" href="">K</a></div>
-            <div><a class="alphabet-menu" href="">L</a></div>
-            <div><a class="alphabet-menu" href="">M</a></div>
-            <div><a class="alphabet-menu" href="">N</a></div>
-            <div><a class="alphabet-menu" href="">O</a></div>
-            <div><a class="alphabet-menu" href="">P</a></div>
-            <div><a class="alphabet-menu" href="">Q</a></div>
-            <div><a class="alphabet-menu" href="">R</a></div>
-            <div><a class="alphabet-menu" href="">S</a></div>
-            <div><a class="alphabet-menu" href="">T</a></div>
-            <div><a class="alphabet-menu" href="">U</a></div>
-            <div><a class="alphabet-menu" href="">V</a></div>
-            <div><a class="alphabet-menu" href="">W</a></div>
-            <div><a class="alphabet-menu" href="">X</a></div>
-            <div><a class="alphabet-menu" href="">Y</a></div>
-            <div><a class="alphabet-menu" href="">Z</a></div>
+            <div><a class="menu-alphabet" href="">A</a></div>
+            <div><a class="menu-alphabet" href="">B</a></div>
+            <div><a class="menu-alphabet" href="">C</a></div>
+            <div><a class="menu-alphabet" href="">D</a></div>
+            <div><a class="menu-alphabet" href="">E</a></div>
+            <div><a class="menu-alphabet" href="">F</a></div>
+            <div><a class="menu-alphabet" href="">G</a></div>
+            <div><a class="menu-alphabet" href="">H</a></div>
+            <div><a class="menu-alphabet" href="">I</a></div>
+            <div><a class="menu-alphabet" href="">J</a></div>
+            <div><a class="menu-alphabet" href="">K</a></div>
+            <div><a class="menu-alphabet" href="">L</a></div>
+            <div><a class="menu-alphabet" href="">M</a></div>
+            <div><a class="menu-alphabet" href="">N</a></div>
+            <div><a class="menu-alphabet" href="">O</a></div>
+            <div><a class="menu-alphabet" href="">P</a></div>
+            <div><a class="menu-alphabet" href="">Q</a></div>
+            <div><a class="menu-alphabet" href="">R</a></div>
+            <div><a class="menu-alphabet" href="">S</a></div>
+            <div><a class="menu-alphabet" href="">T</a></div>
+            <div><a class="menu-alphabet" href="">U</a></div>
+            <div><a class="menu-alphabet" href="">V</a></div>
+            <div><a class="menu-alphabet" href="">W</a></div>
+            <div><a class="menu-alphabet" href="">X</a></div>
+            <div><a class="menu-alphabet" href="">Y</a></div>
+            <div><a class="menu-alphabet" href="">Z</a></div>
         </nav>
     </div>
 
