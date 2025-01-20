@@ -17,7 +17,7 @@
             /* background-color: wheat; */
         }
 
-        /*모든 div에 테두리를 설정한 후 작업, 작업이 끝나면 제거  */
+        /* 모든 div에 테두리를 설정한 후 작업, 작업이 끝나면 제거  */
         div {
             /* border: 1px solid black; */
         }
@@ -43,10 +43,22 @@
             line-height: 40px;
         }
 
+        .box-img-dragon {
+            position: relative;
+        }
+
+        .img-dragon {
+            height: 150px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, 60%);
+        }
+
         /* 검색 전체 박스 */
         .search-box {
             height: 30px;
-            width: 300px;
+            width: 500px;
             background: white;
             border-radius: 40px;
             padding: 10px;
@@ -94,7 +106,7 @@
 
         /* 화면 구역 - 검색 */
         .search-section {
-            height: 500px;
+            height: 600px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -104,10 +116,15 @@
         .nav-alphabet {
             background-color: rgb(5, 197, 255);
             position: fixed;
-            left: 1%;
+            left: 2%;
             top: 50%;
-            transform: translate(0, -50%);
+            transform: translate(0, -45%);
+            display: flex;
             flex-direction: column;
+            align-items: center;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-radius: 20px;
         }
 
         /* 알파벳 내비 메뉴 - 알파벳들 */
@@ -115,6 +132,18 @@
             text-decoration: none;
             color: white;
             padding: 10px;
+        }
+
+        .box-alphabet {
+            /* display: flex;
+            justify-content: space-between; */
+            padding-bottom: 3px;
+            padding-top: 3px;
+        }
+
+        .menu-alphabet:hover {
+            text-decoration: underline black;
+            color: black;
         }
     </style>
 </head>
@@ -130,6 +159,9 @@
             <div><a class="menu-top" href="">공지</a></div>
             <div><a class="menu-top" href="">Q&A</a></div>
         </nav>
+        <div class="box-img-dragon">
+            <img class="img-dragon" src="image/dragon_icon_image.png" alt="">
+        </div>
         <section class="search-section">
             <!-- 검색창 -->
             <!-- form: 폼에서 받아온 내용을 action 속성에 적힌 서버의 주소에 전달해주는 기능을 함
@@ -147,32 +179,32 @@
         </section>
         <!-- 좌측 알파벳 네비 -->
         <nav class="nav-alphabet">
-            <div><a class="menu-alphabet" href="">A</a></div>
-            <div><a class="menu-alphabet" href="">B</a></div>
-            <div><a class="menu-alphabet" href="">C</a></div>
-            <div><a class="menu-alphabet" href="">D</a></div>
-            <div><a class="menu-alphabet" href="">E</a></div>
-            <div><a class="menu-alphabet" href="">F</a></div>
-            <div><a class="menu-alphabet" href="">G</a></div>
-            <div><a class="menu-alphabet" href="">H</a></div>
-            <div><a class="menu-alphabet" href="">I</a></div>
-            <div><a class="menu-alphabet" href="">J</a></div>
-            <div><a class="menu-alphabet" href="">K</a></div>
-            <div><a class="menu-alphabet" href="">L</a></div>
-            <div><a class="menu-alphabet" href="">M</a></div>
-            <div><a class="menu-alphabet" href="">N</a></div>
-            <div><a class="menu-alphabet" href="">O</a></div>
-            <div><a class="menu-alphabet" href="">P</a></div>
-            <div><a class="menu-alphabet" href="">Q</a></div>
-            <div><a class="menu-alphabet" href="">R</a></div>
-            <div><a class="menu-alphabet" href="">S</a></div>
-            <div><a class="menu-alphabet" href="">T</a></div>
-            <div><a class="menu-alphabet" href="">U</a></div>
-            <div><a class="menu-alphabet" href="">V</a></div>
-            <div><a class="menu-alphabet" href="">W</a></div>
-            <div><a class="menu-alphabet" href="">X</a></div>
-            <div><a class="menu-alphabet" href="">Y</a></div>
-            <div><a class="menu-alphabet" href="">Z</a></div>
+            <div class="box-alphabet"><a class="menu-alphabet" href="">A</a></div>
+            <div class="box-alphabet"><a class="menu-alphabet" href="">B</a></div>
+            <div class="box-alphabet"><a class="menu-alphabet" href="">C</a></div>
+            <div class="box-alphabet"><a class="menu-alphabet" href="">D</a></div>
+            <div class="box-alphabet"><a class="menu-alphabet" href="">E</a></div>
+            <div class="box-alphabet"><a class="menu-alphabet" href="">F</a></div>
+            <div class="box-alphabet"><a class="menu-alphabet" href="">G</a></div>
+            <div class="box-alphabet"><a class="menu-alphabet" href="">H</a></div>
+            <div class="box-alphabet"><a class="menu-alphabet" href="">I</a></div>
+            <div class="box-alphabet"><a class="menu-alphabet" href="">J</a></div>
+            <div class="box-alphabet"><a class="menu-alphabet" href="">K</a></div>
+            <div class="box-alphabet"><a class="menu-alphabet" href="">L</a></div>
+            <div class="box-alphabet"><a class="menu-alphabet" href="">M</a></div>
+            <div class="box-alphabet"><a class="menu-alphabet" href="">N</a></div>
+            <div class="box-alphabet"><a class="menu-alphabet" href="">O</a></div>
+            <div class="box-alphabet"><a class="menu-alphabet" href="">P</a></div>
+            <div class="box-alphabet"><a class="menu-alphabet" href="">Q</a></div>
+            <div class="box-alphabet"><a class="menu-alphabet" href="">R</a></div>
+            <div class="box-alphabet"><a class="menu-alphabet" href="">S</a></div>
+            <div class="box-alphabet"><a class="menu-alphabet" href="">T</a></div>
+            <div class="box-alphabet"><a class="menu-alphabet" href="">U</a></div>
+            <div class="box-alphabet"><a class="menu-alphabet" href="">V</a></div>
+            <div class="box-alphabet"><a class="menu-alphabet" href="">W</a></div>
+            <div class="box-alphabet"><a class="menu-alphabet" href="">X</a></div>
+            <div class="box-alphabet"><a class="menu-alphabet" href="">Y</a></div>
+            <div class="box-alphabet"><a class="menu-alphabet" href="">Z</a></div>
         </nav>
     </div>
 
